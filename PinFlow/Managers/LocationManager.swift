@@ -11,7 +11,7 @@ import CoreLocation
 protocol LocationManagerDelegate: AnyObject {
     func locationManagerAuthorizationChanged(_ status: CLAuthorizationStatus)
     func locationManagerDidUpdate(_ location: CLLocation)
-    func locationManagerDidFail(with error: Error)
+    func locationManagerDidFail(with error: AppError)
 }
 
 final class LocationManager: NSObject {
@@ -58,7 +58,7 @@ final class LocationManager: NSObject {
 
 }
 
-
+// MARK: - CLLocationManagerDelegate
 extension LocationManager: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         delegate?.locationManagerAuthorizationChanged(manager.authorizationStatus)
@@ -70,6 +70,24 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        delegate?.locationManagerDidFail(with: error)
+        let appError: AppError
+
+        if let clError = error as? CLError {
+            switch clError.code {
+            case .denied:
+                appError = .locationDenied
+            case .locationUnknown:
+                appError = .locationUnknown
+            case .network:
+                appError = .locationNetwork
+            default:
+                appError = .genericLocationError(error)
+            }
+        } else {
+            appError = .genericLocationError(error)
+        }
+
+        delegate?.locationManagerDidFail(with: appError)
     }
+
 }

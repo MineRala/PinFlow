@@ -1,0 +1,16 @@
+/* 
+  InfoPlist.strings
+  PinFlow
+
+  Created by Mine Rala on 12.05.2025.
+  
+*/
+
+/* NSLocationWhenInUseUsageDescription */
+"NSLocationWhenInUseUsageDescription" = "Location permission is required to show your location on the map and to record your route.";
+
+/* NSLocationAlwaysAndWhenInUseUsageDescription */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "The app needs your permission to track your location even in the background.";
+
+/* NSLocationAlwaysUsageDescription */
+"NSLocationAlwaysUsageDescription" = "The app needs your permission to track your location even in the background.";

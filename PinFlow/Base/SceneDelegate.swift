@@ -15,8 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             let coreDataManager = CoreDataManager()
-            let mapVC = MapViewController(coreDataManager: coreDataManager)
-            let nav = UINavigationController(rootViewController: mapVC)
+            let locationManager = LocationManager()
+            let mapViewModel = MapViewModel(locationManager: locationManager, coreDataManager: coreDataManager)
+            let mapViewController = MapViewController(viewModel: mapViewModel)
+            let nav = UINavigationController(rootViewController: mapViewController)
             window.rootViewController = nav
             self.window = window
             window.makeKeyAndVisible()
@@ -51,7 +53,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
 

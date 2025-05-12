@@ -8,8 +8,9 @@
 
 import CoreData
 import CoreLocation
+import Combine
 
-protocol CoreDataManaging {
+protocol CoreDataManagerProtocol {
     var persistentContainer: NSPersistentContainer { get }
     var context: NSManagedObjectContext { get }
 
@@ -19,14 +20,15 @@ protocol CoreDataManaging {
     func deleteAllLocations()
 }
 
-final class CoreDataManager: CoreDataManaging {
+final class CoreDataManager: CoreDataManagerProtocol {
     let persistentContainer: NSPersistentContainer
+    let errorPublisher = PassthroughSubject<AppError, Never>()
 
     var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
 
-    init(modelName: String = "LocationModel") {
+    init(modelName: String = AppString.locationModel) {
         persistentContainer = NSPersistentContainer(name: modelName)
         persistentContainer.loadPersistentStores { _, error in
             if let error = error {
@@ -41,6 +43,7 @@ final class CoreDataManager: CoreDataManaging {
                 try context.save()
             } catch {
                 print("Core Data save error: \(error)")
+                errorPublisher.send(.saveFailed)
             }
         }
     }
@@ -63,10 +66,10 @@ final class CoreDataManager: CoreDataManaging {
             return locations
         } catch {
             print("Error while retrieving data: \(error)")
+            errorPublisher.send(.fetchFailed)
             return []
         }
     }
-
 
     func deleteAllLocations() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = LocationModel.fetchRequest()
@@ -77,6 +80,7 @@ final class CoreDataManager: CoreDataManaging {
             saveContext()
         } catch {
             print("Error while deleting data: \(error)")
+            errorPublisher.send(.deleteFailed)
         }
     }
 }

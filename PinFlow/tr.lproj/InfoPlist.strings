@@ -1,0 +1,16 @@
+/* 
+  InfoPlist.strings
+  PinFlow
+
+  Created by Mine Rala on 12.05.2025.
+  
+*/
+
+/* NSLocationWhenInUseUsageDescription */
+"NSLocationWhenInUseUsageDescription" = "Konumunuzu haritada göstermek ve rotanızı kaydetmek için konum izni gerekiyor.";
+
+/* NSLocationAlwaysAndWhenInUseUsageDescription */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Uygulama konumunuzu arka planda da izlemek için izninize ihtiyaç duyuyor.";
+
+/* NSLocationAlwaysUsageDescription */
+"NSLocationAlwaysUsageDescription" = "Uygulama konumunuzu arka planda da izlemek için izninize ihtiyaç duyuyor.";

@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  PinFlow
+
+  Created by Mine Rala on 12.05.2025.
+  
+*/
+
+"start" = "Start";
+"stop" = "Stop";
+"reset" = "Reset";
+"navigaitonTitle" = "Location Tracking";
+"adress" = "Adress";
+"okey" = "Okey";
+"privacyTitle" = "Location Permission Required";
+"privacyMessage" = "The app requires location permission to use map and route features. Please enable permission in Settings.";
+"settings" = "Settings";
+"cancel" = "Cancel";
+"place" = "Place:";
+"street" = "Street:";
+"doorNumber" = "Door No:";
+"locality" = "District:";
+"subLocality" = "Neighborhood:";
+"province" = "Province:";
+"postalCode" = "Postal Code:";
+"country" = "Country:";
+"resetRoute" = "Reset Route";
+"confirmResetRoute" = "Are you sure you want to reset the route?";
+"yes" = "Yes";
+"error" = "Error";
+"saveFailed" = "An error occurred while saving the location.";
+"fetchFailed" = "Failed to load locations.";
+"deleteFailed" = "Failed to delete locations.";
+"locationDenied" = "Location permission denied. Please enable it in Settings.";
+"locationUnknown" = "Location could not be determined. Please try again.";
+"locationNetwork" = "Unable to access location network.";

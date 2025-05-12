@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  PinFlow
+
+  Created by Mine Rala on 12.05.2025.
+  
+*/
+
+"start" = "Başlat";
+"stop" = "Durdur";
+"reset" = "Sıfırla";
+"navigaitonTitle" = "Konum Takibi";
+"adress" = "Adres";
+"okey" = "Tamam";
+"privacyTitle" = "Konum İzni Gerekli";
+"privacyMessage" = "Uygulama, harita ve rota özelliklerini kullanabilmek için konum izni gerektiriyor. Lütfen Ayarlardan izni etkinleştirin.";
+"settings" = "Ayarlar";
+"cancel" = "İptal";
+"place" = "Yer:";
+"street" = "Cadde:";
+"doorNumber" = "Kapı No:";
+"locality" = "İlçe:";
+"subLocality" = "Semt:";
+"province" = "İl:";
+"postalCode" = "Posta Kodu:";
+"country" = "Ülke:";
+"resetRoute" = "Rotayı Sıfırla";
+"confirmResetRoute" = "Rotayı sıfırlamak istediğinize emin misiniz?";
+"yes" = "Evet";
+"error" = "Hata";
+"saveFailed" = "Konum kaydedilirken bir hata oluştu.";
+"fetchFailed" = "Konumlar yüklenemedi.";
+"deleteFailed" = "Konumlar silinemedi.";
+"locationDenied" = "Konum izni reddedildi. Ayarlardan izin verin.";
+"locationUnknown" = "Konum belirlenemedi. Lütfen tekrar deneyin.";
+"locationNetwork" = "Konum ağına ulaşılamıyor.";
