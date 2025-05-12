@@ -14,6 +14,18 @@ protocol LocationManagerDelegate: AnyObject {
     func locationManagerDidFail(with error: AppError)
 }
 
+protocol LocationManagerProtocol: AnyObject {
+    var delegate: LocationManagerDelegate? { get set }
+    var isTracking: Bool { get }
+    var currentLocation: CLLocation? { get }
+
+    func requestWhenInUseAuthorization()
+    func requestAlwaysAuthorization()
+    func startTracking()
+    func stopTracking()
+    func currentAuthorizationStatus() -> CLAuthorizationStatus
+}
+
 final class LocationManager: NSObject {
     private let manager = CLLocationManager()
     public weak var delegate: LocationManagerDelegate?
@@ -28,34 +40,35 @@ final class LocationManager: NSObject {
         manager.allowsBackgroundLocationUpdates = true
         manager.pausesLocationUpdatesAutomatically = false
     }
+}
 
+// MARK: - LocationManagerProtocol
+extension LocationManager: LocationManagerProtocol {
+    var currentLocation: CLLocation? {
+        return manager.location
+    }
 
     func requestWhenInUseAuthorization() {
-         manager.requestWhenInUseAuthorization()
-     }
+        manager.requestWhenInUseAuthorization()
+    }
 
-     func requestAlwaysAuthorization() {
-         manager.requestAlwaysAuthorization()
-     }
+    func requestAlwaysAuthorization() {
+        manager.requestAlwaysAuthorization()
+    }
 
-     func startTracking() {
-         manager.startUpdatingLocation()
-         isTracking = true
-     }
+    func startTracking() {
+        manager.startUpdatingLocation()
+        isTracking = true
+    }
 
-     func stopTracking() {
-         manager.stopUpdatingLocation()
-         isTracking = false
-     }
+    func stopTracking() {
+        manager.stopUpdatingLocation()
+        isTracking = false
+    }
 
-     func currentAuthorizationStatus() -> CLAuthorizationStatus {
-         return manager.authorizationStatus
-     }
-
-     var currentLocation: CLLocation? {
-         return manager.location
-     }
-
+    func currentAuthorizationStatus() -> CLAuthorizationStatus {
+        return manager.authorizationStatus
+    }
 }
 
 // MARK: - CLLocationManagerDelegate

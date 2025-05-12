@@ -14,8 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            let coreDataManager = CoreDataManager()
-            let locationManager = LocationManager()
+            let coreDataManager: CoreDataManagerProtocol = CoreDataManager()
+            let locationManager: LocationManagerProtocol = LocationManager()
             let mapViewModel = MapViewModel(locationManager: locationManager, coreDataManager: coreDataManager)
             let mapViewController = MapViewController(viewModel: mapViewModel)
             let nav = UINavigationController(rootViewController: mapViewController)

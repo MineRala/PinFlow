@@ -29,17 +29,16 @@ protocol MapViewModelProtocol: AnyObject {
     func didSelectAnnotation(at coordinate: CLLocationCoordinate2D)
 }
 
-
 final class MapViewModel: NSObject {
     weak var delegate: MapViewModelDelegate?
     private var cancellables = Set<AnyCancellable>()
 
-    private let locationManager: LocationManager
+    private let locationManager: LocationManagerProtocol
     private let coreDataManager: CoreDataManagerProtocol
     private var savedLocations: [CLLocationCoordinate2D] = []
     private let minimumDistance: CLLocationDistance = 100
 
-    init(locationManager: LocationManager, coreDataManager: CoreDataManagerProtocol) {
+    init(locationManager: LocationManagerProtocol, coreDataManager: CoreDataManagerProtocol) {
         self.locationManager = locationManager
         self.coreDataManager = coreDataManager
         super.init()
