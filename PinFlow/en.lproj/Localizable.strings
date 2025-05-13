@@ -31,6 +31,6 @@
 "saveFailed" = "An error occurred while saving the location.";
 "fetchFailed" = "Failed to load locations.";
 "deleteFailed" = "Failed to delete locations.";
-"locationDenied" = "Location permission denied. Please enable it in Settings.";
+"locationDenied" = "Location permission denied.";
 "locationUnknown" = "Location could not be determined. Please try again.";
 "locationNetwork" = "Unable to access location network.";

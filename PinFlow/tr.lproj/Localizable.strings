@@ -31,6 +31,6 @@
 "saveFailed" = "Konum kaydedilirken bir hata oluştu.";
 "fetchFailed" = "Konumlar yüklenemedi.";
 "deleteFailed" = "Konumlar silinemedi.";
-"locationDenied" = "Konum izni reddedildi. Ayarlardan izin verin.";
+"locationDenied" = "Konum izni reddedildi.";
 "locationUnknown" = "Konum belirlenemedi. Lütfen tekrar deneyin.";
 "locationNetwork" = "Konum ağına ulaşılamıyor.";
