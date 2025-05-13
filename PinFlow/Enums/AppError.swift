@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum AppError: Error {
     case saveFailed
     case fetchFailed

@@ -10,7 +10,18 @@
 		E86F524C2DD150C1001DE5CD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E86F524B2DD150C1001DE5CD /* SnapKit */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E8508ACB2DD2A24800AB83F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E86F52132DD14F2A001DE5CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E86F521A2DD14F2A001DE5CD;
+			remoteInfo = PinFlow;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		E8508AC72DD2A24700AB83F6 /* PinFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E86F521B2DD14F2A001DE5CD /* PinFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -25,6 +36,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		E8508AC82DD2A24800AB83F6 /* PinFlowTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PinFlowTests;
+			sourceTree = "<group>";
+		};
 		E86F521D2DD14F2A001DE5CD /* PinFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -36,6 +52,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E8508AC42DD2A24700AB83F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E86F52182DD14F2A001DE5CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -51,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				E86F521D2DD14F2A001DE5CD /* PinFlow */,
+				E8508AC82DD2A24800AB83F6 /* PinFlowTests */,
 				E86F521C2DD14F2A001DE5CD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E86F521B2DD14F2A001DE5CD /* PinFlow.app */,
+				E8508AC72DD2A24700AB83F6 /* PinFlowTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +91,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E8508AC62DD2A24700AB83F6 /* PinFlowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8508ACD2DD2A24800AB83F6 /* Build configuration list for PBXNativeTarget "PinFlowTests" */;
+			buildPhases = (
+				E8508AC32DD2A24700AB83F6 /* Sources */,
+				E8508AC42DD2A24700AB83F6 /* Frameworks */,
+				E8508AC52DD2A24700AB83F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8508ACC2DD2A24800AB83F6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E8508AC82DD2A24800AB83F6 /* PinFlowTests */,
+			);
+			name = PinFlowTests;
+			packageProductDependencies = (
+			);
+			productName = PinFlowTests;
+			productReference = E8508AC72DD2A24700AB83F6 /* PinFlowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E86F521A2DD14F2A001DE5CD /* PinFlow */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E86F52312DD14F2F001DE5CD /* Build configuration list for PBXNativeTarget "PinFlow" */;
@@ -99,6 +147,10 @@
 				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					E8508AC62DD2A24700AB83F6 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = E86F521A2DD14F2A001DE5CD;
+					};
 					E86F521A2DD14F2A001DE5CD = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -123,11 +175,19 @@
 			projectRoot = "";
 			targets = (
 				E86F521A2DD14F2A001DE5CD /* PinFlow */,
+				E8508AC62DD2A24700AB83F6 /* PinFlowTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E8508AC52DD2A24700AB83F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E86F52192DD14F2A001DE5CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,6 +198,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E8508AC32DD2A24700AB83F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E86F52172DD14F2A001DE5CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,7 +214,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E8508ACC2DD2A24800AB83F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E86F521A2DD14F2A001DE5CD /* PinFlow */;
+			targetProxy = E8508ACB2DD2A24800AB83F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		E8508ACE2DD2A24800AB83F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 29JK24NZ4B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MineRala.PinFlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PinFlow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PinFlow";
+			};
+			name = Debug;
+		};
+		E8508ACF2DD2A24800AB83F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 29JK24NZ4B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MineRala.PinFlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PinFlow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PinFlow";
+			};
+			name = Release;
+		};
 		E86F52322DD14F2F001DE5CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -346,6 +457,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E8508ACD2DD2A24800AB83F6 /* Build configuration list for PBXNativeTarget "PinFlowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8508ACE2DD2A24800AB83F6 /* Debug */,
+				E8508ACF2DD2A24800AB83F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E86F52162DD14F2A001DE5CD /* Build configuration list for PBXProject "PinFlow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

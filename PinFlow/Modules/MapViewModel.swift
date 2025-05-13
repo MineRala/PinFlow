@@ -38,6 +38,7 @@ final class MapViewModel: NSObject {
     private var savedLocations: [CLLocationCoordinate2D] = []
     private let minimumDistance: CLLocationDistance = 100
 
+    // MARK:  Init & Deinit
     init(locationManager: LocationManagerProtocol, coreDataManager: CoreDataManagerProtocol) {
         self.locationManager = locationManager
         self.coreDataManager = coreDataManager
@@ -49,7 +50,10 @@ final class MapViewModel: NSObject {
     deinit {
         cancellables.forEach { $0.cancel() }
     }
+}
 
+// MARK: - Private
+extension MapViewModel {
     private func bindCoreDataErrors() {
         if let coreDataManager = coreDataManager as? CoreDataManager {
             coreDataManager.errorPublisher
@@ -65,19 +69,14 @@ final class MapViewModel: NSObject {
     private func checkLocationPermission() {
         switch locationManager.currentAuthorizationStatus() {
         case .notDetermined:
-            // Kullanıcıdan henüz izin istenmemiş
             delegate?.setLocationButtonsVisibility(isVisible: false)
-            locationManager.requestWhenInUseAuthorization() // İlk olarak bu izni iste
+            locationManager.requestWhenInUseAuthorization()
         case .authorizedWhenInUse:
-            // Kullanıcı "When In Use" izni verdi
             delegate?.setLocationButtonsVisibility(isVisible: true)
-            // "Always" iznini burada istemek doğru olabilir
-            locationManager.requestAlwaysAuthorization() // Bu durumda "Always" izni iste
+            locationManager.requestAlwaysAuthorization()
         case .authorizedAlways:
-            // Kullanıcı zaten "Always" izni vermiş
             delegate?.setLocationButtonsVisibility(isVisible: true)
         case .denied, .restricted:
-            // İzin verilmemiş, kullanıcıyı ayarlara yönlendir
             delegate?.setLocationButtonsVisibility(isVisible: false)
             delegate?.showLocationPermissionAlert()
         @unknown default:

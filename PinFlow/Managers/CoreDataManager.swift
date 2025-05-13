@@ -20,7 +20,7 @@ protocol CoreDataManagerProtocol {
     func deleteAllLocations()
 }
 
-final class CoreDataManager: CoreDataManagerProtocol {
+final class CoreDataManager {
     let persistentContainer: NSPersistentContainer
     let errorPublisher = PassthroughSubject<AppError, Never>()
 
@@ -36,7 +36,10 @@ final class CoreDataManager: CoreDataManagerProtocol {
             }
         }
     }
+}
 
+// MARK: - CoreDataManagerProtocol
+extension CoreDataManager: CoreDataManagerProtocol {
     func saveContext() {
         if context.hasChanges {
             do {

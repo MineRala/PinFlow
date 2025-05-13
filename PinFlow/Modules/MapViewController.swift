@@ -47,8 +47,10 @@ final class MapViewController: UIViewController {
         return button
     }()
 
+    // MARK: Properties
     private let viewModel: MapViewModelProtocol
 
+    // MARK:  Init
     init(viewModel: MapViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -59,6 +61,7 @@ final class MapViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -67,8 +70,10 @@ final class MapViewController: UIViewController {
         centerOnCurrentLocation()
         viewModel.viewDidLoad()
     }
+}
 
-    // MARK: - Setup
+// MARK: - Setup
+extension MapViewController {
     private func setupMapView() {
         view.addSubview(mapView)
         mapView.snp.makeConstraints { make in
@@ -95,8 +100,18 @@ final class MapViewController: UIViewController {
             make.edges.equalToSuperview().inset(10)
         }
     }
+}
 
-    // MARK: - Actions
+// MARK: - Private
+extension MapViewController {
+    private func centerMap(on location: CLLocation) {
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: viewModel.defaultMapSpan, longitudinalMeters: viewModel.defaultMapSpan)
+        mapView.setRegion(region, animated: true)
+    }
+}
+
+// MARK: - Actions
+extension MapViewController {
     @objc private func toggleTracking() {
         viewModel.toggleTracking()
        }
@@ -111,12 +126,6 @@ final class MapViewController: UIViewController {
     @objc private func centerOnCurrentLocation() {
         guard let location = viewModel.getCurrentLocation() else { return }
         centerMap(on: location)
-    }
-
-    // MARK: - Helpers
-    private func centerMap(on location: CLLocation) {
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: viewModel.defaultMapSpan, longitudinalMeters: viewModel.defaultMapSpan)
-        mapView.setRegion(region, animated: true)
     }
 }
 
