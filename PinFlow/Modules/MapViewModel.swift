@@ -85,9 +85,8 @@ extension MapViewModel {
     }
 
     private func saveLocation(_ coordinate: CLLocationCoordinate2D) {
-        // Perform Core Data operations on a background context
         let backgroundContext = coreDataManager.persistentContainer.newBackgroundContext()
-        backgroundContext.perform { // Core Data üzerinde işlem yaparken kullanılan asenkron yöntem. UI thread'ini engellemez.Core data da perform daha thread safe olduğu için .global() GCD yerine kullanılıyor.
+        backgroundContext.perform {
             print("Perform method entered.")
             self.coreDataManager.saveLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         }

@@ -17,6 +17,7 @@ enum AppString {
     static let customAnnotationIdentifier = "CustomAnnotation"
     static let locationModel = "LocationModel"
 
+    // UI
     static let start = "start"
     static let stop = "stop"
     static let reset = "reset"
