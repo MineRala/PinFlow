@@ -56,6 +56,7 @@ This allows you to start using SnapKit for creating responsive layouts in your p
 
 # 🧪 Simulated Location Tracking Test (City Run)
 The app tracks the user’s location and places a marker (pin) on the map every 100 meters of movement. Instead of testing this on a physical device, you can easily simulate the behavior using the iOS Simulator.
+
 🔧 Steps to Test in Simulator:
 
 Launch the app in the iOS Simulator via Xcode.
@@ -77,3 +78,6 @@ When you tap on a marker, the corresponding address will be displayed.
 <img src="https://github.com/user-attachments/assets/89b4b776-b170-4bc9-aa95-fd76b08e1d3e" width="150">
 <img src="https://github.com/user-attachments/assets/105d49f5-6f17-4835-ae73-45fc28ad1852" width="150">
 <img src="https://github.com/user-attachments/assets/c364f018-3d04-4c2d-bb7c-6beebaf05b72" width="150">
+<img src="https://github.com/user-attachments/assets/e8d771c7-f1aa-4b8d-8043-8992d152e71e" width="150">
+<img src="https://github.com/user-attachments/assets/3b752702-013b-4c9a-ab9f-e66044a090e6" width="150">
+<img src="https://github.com/user-attachments/assets/b16da84a-1476-4316-a121-6e093ff8d9e3" width="150">
