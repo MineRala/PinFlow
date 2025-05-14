@@ -30,6 +30,7 @@ This project is built using the MVVM (Model-View-ViewModel) architecture. MVVM i
 - Protocol Oriented Programming (POP)
 - Delegate
 - Core Data
+- Combine
 - Depedency Injection
 - Localizable
 - Unit Tests
